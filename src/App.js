@@ -4,12 +4,11 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  withRouter
+  
 } from "react-router-dom";
 
 import './App.css';
 import Home from "./components/Home";
-import Contact from "./components/Contact";
 import Navbar from "./components/layout/Navbar";
 import AddBreed from "./components/breeds/AddBreed";
 
@@ -21,7 +20,6 @@ function App(props) {
 
     <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/contact" component={Contact} />
           <Route exact path="/breeds/add" component={AddBreed} />
         </Switch>
     </div>
