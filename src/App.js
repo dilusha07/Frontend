@@ -1,9 +1,31 @@
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  withRouter
+} from "react-router-dom";
 
-function App() {
+import './App.css';
+import Home from "./components/Home";
+import Contact from "./components/Contact";
+import Navbar from "./components/layout/Navbar";
+import AddBreed from "./components/breeds/AddBreed";
+
+function App(props) {
   return (
-    <h1>Hellooo</h1>
+    <Router>
+    <div className = "App">
+    <Navbar />
+
+    <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/breeds/add" component={AddBreed} />
+        </Switch>
+    </div>
+    </Router>
   );
 }
 
