@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
           <Link className="navbar-brand" href="/">
             Breeds
@@ -34,9 +34,14 @@ const Navbar = () => {
                 </NavLink>
               </li>
             </ul>
+            <Link className="btn btn-outline-light" to="/breeds/add">Add Breed</Link>
+           
           </div>
-  
-          <Link className="btn btn-outline-light" to="/breeds/add">Add Breed</Link>
+          <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+          
         </div>
       </nav>
     );
