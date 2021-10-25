@@ -11,6 +11,7 @@ import './App.css';
 import Home from "./components/Home";
 import Navbar from "./components/layout/Navbar";
 import AddBreed from "./components/breeds/AddBreed";
+import Breeds from "./components/breeds/index";
 
 function App(props) {
   return (
@@ -19,9 +20,11 @@ function App(props) {
     <Navbar />
 
     <Switch>
+          
           <Route exact path="/" component={Home} />
           <Route exact path="/breeds/add" component={AddBreed} />
-        </Switch>
+          <Route exact path= "/breeds/list" component={Breeds} />
+    </Switch>
     </div>
     </Router>
   );
