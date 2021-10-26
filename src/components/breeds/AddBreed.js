@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from 'axios';
-import { useHistory } from "react-router-dom";
+
 
 const AddBreed = () => {
-  let history = useHistory();
+  
   const [breed, setBreed] = useState({
     name: "",
     description: "",
@@ -24,12 +24,12 @@ const AddBreed = () => {
   const onSubmit = async e => {
     e.preventDefault();
     await axios.post("http://localhost:3001/breeds", breed);
-    history.push("/");
+    alert('Data Inserted');
   };
   return (
-    <div className="container">
+    <div className="container py-4">
       <div className="w-75 mx-auto shadow p-5">
-        <h2 className="text-center mb-4">Add A Breed</h2>
+        <h2 className="text-center mb-4">Add a Breed</h2>
         <form onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <input

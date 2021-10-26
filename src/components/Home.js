@@ -11,19 +11,19 @@ const Home = () => {
 
   const getAllBreeds = async () => {
     const result = await axios.get("http://localhost:3001/breeds");
-    setBreed(result.data.reverse());
+    setBreed(result.data);
   };
 
   const deleteBreed = async id => {
     await axios.delete(`http://localhost:3001/breeds/${id}`);
     getAllBreeds();
-  };
+  }
 
 
   return (
     <div className="container">
       <div className="py-4">
-        <h1>List Breeds</h1>
+        <h1> Breeds</h1>
         <table class="table border shadow">
           <thead class="thead-dark">
             <tr>
@@ -52,12 +52,12 @@ const Home = () => {
                 <td>{breed.energy_level}</td>
                 <td>{breed.weight}</td>
                 <td>
-                  <Link class="btn btn-primary mr-2" to={`/breeds/${breed.id}`}>
+                  <Link class="btn btn-primary mr-2" >
                     View
                   </Link>
                   <Link
                     class="btn btn-outline-primary mr-2"
-                    to={`/breeds/edit/${breed.id}`}
+                    
                   >
                     Edit
                   </Link>

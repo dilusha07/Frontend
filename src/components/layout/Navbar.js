@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
-          <Link className="navbar-brand" href="/">
+          <Link className="navbar-brand" exact to="/breeds/list">
             Breeds
           </Link>
           <button
@@ -28,11 +28,6 @@ const Navbar = () => {
                 </NavLink>
               </li>
               
-              <li className="nav-item">
-                <NavLink className="nav-link" exact to="#">
-                  
-                </NavLink>
-              </li>
             </ul>
             <Link className="btn btn-outline-light" to="/breeds/add">Add Breed</Link>
            
